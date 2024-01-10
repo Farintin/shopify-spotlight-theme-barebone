@@ -1,0 +1,1 @@
+# shopify-spotlight-theme-barebone
