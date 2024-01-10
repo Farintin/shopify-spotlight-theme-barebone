@@ -1,0 +1,30 @@
+{% comment %}
+  Renders a standard dropdown style menu for the header.
+
+  Usage:
+  {% render 'header-dropdown-menu' %}
+{% endcomment %}
+
+<ul class="header-menu " role="list">
+  {%- for link in section.settings.menu.links -%}
+    <li>
+      {%- if link.links != blank -%}
+        <p>dropdown</p>
+      {%- else -%}
+        <a
+          href="{{ link.url }}"
+          {% if link.current %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span
+            {%- if link.current %}
+            {% endif %}
+          >
+            {{- link.title | escape -}}
+          </span>
+        </a>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

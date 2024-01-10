@@ -1,0 +1,40 @@
+header {
+    padding: 0 2rem;
+}
+header .wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(200px, 2fr) minmax(auto, 5fr) minmax(200px, 2fr);
+}
+header .wrapper .col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid green;
+}
+header .wrapper .col:first-child {
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+}
+header .wrapper .col:last-child {
+    justify-content: flex-end;
+    /* border: 1px solid blue; */
+}
+header .wrapper .col > * {
+    margin: 8px;
+}
+header .wrapper .col > *:first-child {
+    margin-left: 0px;
+}
+header .wrapper .col > *:last-child {
+    margin-right: 0px;
+}
+
+header .logo.text {
+    color: black;
+    line-height: 75%;
+    font-weight: 600;
+}
