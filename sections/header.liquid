@@ -5,12 +5,16 @@
     
     <div class="col">
 
-      {%- if settings.logo != blank -%}
-        {{ settings.logo | image_url: width: 100 | image_tag:
-          width: settings.logo_width,
-          alt: 'logo',
-          preload: true
-        }}
+      {%- if section.settings.logo != blank -%}
+
+        <a href="/">
+          {{ section.settings.logo | image_url: width: 200 | image_tag:
+            width: section.settings.logo_width,
+            alt: shop.name,
+            preload: true
+          }}
+        </a>
+
       {%- else -%}
         <h1 class="logo text heading">
           {{ shop.name }}
@@ -45,6 +49,21 @@
   "class": "section-header",
   "max_blocks": 3,
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "logo width",
+      "default": 100
+    },
     {
       "type": "link_list",
       "id": "menu",
